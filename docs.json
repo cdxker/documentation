@@ -424,68 +424,68 @@
       "destination": "/components/update"
     },
     {
-      "source": "/components/accordions",
-      "destination": "/widgets/accordions"
+      "source": "/widgets/accordions",
+      "destination": "/components/accordions"
     },
     {
-      "source": "/components/callouts",
-      "destination": "/widgets/callouts"
+      "source": "/widgets/callouts",
+      "destination": "/components/callouts"
     },
     {
-      "source": "/components/cards",
-      "destination": "/widgets/cards"
+      "source": "/widgets/cards",
+      "destination": "/components/cards"
     },
     {
-      "source": "/components/columns",
-      "destination": "/widgets/columns"
+      "source": "/widgets/columns",
+      "destination": "/components/columns"
     },
     {
-      "source": "/components/code-groups",
-      "destination": "/widgets/code-groups"
+      "source": "/widgets/code-groups",
+      "destination": "/components/code-groups"
     },
     {
-      "source": "/components/examples",
-      "destination": "/widgets/examples"
+      "source": "/widgets/examples",
+      "destination": "/components/examples"
     },
     {
-      "source": "/components/expandables",
-      "destination": "/widgets/expandables"
+      "source": "/widgets/expandables",
+      "destination": "/components/expandables"
     },
     {
-      "source": "/components/fields",
-      "destination": "/widgets/fields"
+      "source": "/widgets/fields",
+      "destination": "/components/fields"
     },
     {
-      "source": "/components/frames",
-      "destination": "/widgets/frames"
+      "source": "/widgets/frames",
+      "destination": "/components/frames"
     },
     {
-      "source": "/components/icons",
-      "destination": "/widgets/icons"
+      "source": "/widgets/icons",
+      "destination": "/components/icons"
     },
     {
-      "source": "/components/mermaid-diagrams",
-      "destination": "/widgets/mermaid-diagrams"
+      "source": "/widgets/mermaid-diagrams",
+      "destination": "/components/mermaid-diagrams"
     },
     {
-      "source": "/components/panel",
-      "destination": "/widgets/panel"
+      "source": "/widgets/panel",
+      "destination": "/components/panel"
     },
     {
-      "source": "/components/steps",
-      "destination": "/widgets/steps"
+      "source": "/widgets/steps",
+      "destination": "/components/steps"
     },
     {
-      "source": "/components/tabs",
-      "destination": "/widgets/tabs"
+      "source": "/widgets/tabs",
+      "destination": "/components/tabs"
     },
     {
-      "source": "/components/tooltips",
-      "destination": "/widgets/tooltips"
+      "source": "/widgets/tooltips",
+      "destination": "/components/tooltips"
     },
     {
-      "source": "/components/update",
-      "destination": "/widgets/update"
+      "source": "/widgets/update",
+      "destination": "/components/update"
     },
     {
       "source": "/api-playground/openapi/advanced-features",
