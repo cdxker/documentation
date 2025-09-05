@@ -424,6 +424,70 @@
       "destination": "/components/update"
     },
     {
+      "source": "/components/accordions",
+      "destination": "/widgets/accordions"
+    },
+    {
+      "source": "/components/callouts",
+      "destination": "/widgets/callouts"
+    },
+    {
+      "source": "/components/cards",
+      "destination": "/widgets/cards"
+    },
+    {
+      "source": "/components/columns",
+      "destination": "/widgets/columns"
+    },
+    {
+      "source": "/components/code-groups",
+      "destination": "/widgets/code-groups"
+    },
+    {
+      "source": "/components/examples",
+      "destination": "/widgets/examples"
+    },
+    {
+      "source": "/components/expandables",
+      "destination": "/widgets/expandables"
+    },
+    {
+      "source": "/components/fields",
+      "destination": "/widgets/fields"
+    },
+    {
+      "source": "/components/frames",
+      "destination": "/widgets/frames"
+    },
+    {
+      "source": "/components/icons",
+      "destination": "/widgets/icons"
+    },
+    {
+      "source": "/components/mermaid-diagrams",
+      "destination": "/widgets/mermaid-diagrams"
+    },
+    {
+      "source": "/components/panel",
+      "destination": "/widgets/panel"
+    },
+    {
+      "source": "/components/steps",
+      "destination": "/widgets/steps"
+    },
+    {
+      "source": "/components/tabs",
+      "destination": "/widgets/tabs"
+    },
+    {
+      "source": "/components/tooltips",
+      "destination": "/widgets/tooltips"
+    },
+    {
+      "source": "/components/update",
+      "destination": "/widgets/update"
+    },
+    {
       "source": "/api-playground/openapi/advanced-features",
       "destination": "/api-playground/customization"
     },
