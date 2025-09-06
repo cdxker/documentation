@@ -53,29 +53,29 @@
             ]
           },
           {
-            "group": "Widgets",
+            "group": "Components",
             "pages": [
               "text",
               "image-embeds",
               "list-table",
               "code",
               "reusable-snippets",
-              "widgets/accordions",
-              "widgets/callouts",
-              "widgets/cards",
-              "widgets/columns",
-              "widgets/code-groups",
-              "widgets/examples",
-              "widgets/expandables",
-              "widgets/fields",
-              "widgets/frames",
-              "widgets/icons",
-              "widgets/mermaid-diagrams",
-              "widgets/panel",
-              "widgets/steps",
-              "widgets/tabs",
-              "widgets/tooltips",
-              "widgets/update"
+              "components/accordions",
+              "components/callouts",
+              "components/cards",
+              "components/columns",
+              "components/code-groups",
+              "components/examples",
+              "components/expandables",
+              "components/fields",
+              "components/frames",
+              "components/icons",
+              "components/mermaid-diagrams",
+              "components/panel",
+              "components/steps",
+              "components/tabs",
+              "components/tooltips",
+              "components/update"
             ]
           },
           {
@@ -425,67 +425,67 @@
     },
     {
       "source": "/components/accordions",
-      "destination": "/widgets/accordions"
+      "destination": "/components/accordions"
     },
     {
       "source": "/components/callouts",
-      "destination": "/widgets/callouts"
+      "destination": "/components/callouts"
     },
     {
       "source": "/components/cards",
-      "destination": "/widgets/cards"
+      "destination": "/components/cards"
     },
     {
       "source": "/components/columns",
-      "destination": "/widgets/columns"
+      "destination": "/components/columns"
     },
     {
       "source": "/components/code-groups",
-      "destination": "/widgets/code-groups"
+      "destination": "/components/code-groups"
     },
     {
       "source": "/components/examples",
-      "destination": "/widgets/examples"
+      "destination": "/components/examples"
     },
     {
       "source": "/components/expandables",
-      "destination": "/widgets/expandables"
+      "destination": "/components/expandables"
     },
     {
       "source": "/components/fields",
-      "destination": "/widgets/fields"
+      "destination": "/components/fields"
     },
     {
       "source": "/components/frames",
-      "destination": "/widgets/frames"
+      "destination": "/components/frames"
     },
     {
       "source": "/components/icons",
-      "destination": "/widgets/icons"
+      "destination": "/components/icons"
     },
     {
       "source": "/components/mermaid-diagrams",
-      "destination": "/widgets/mermaid-diagrams"
+      "destination": "/components/mermaid-diagrams"
     },
     {
       "source": "/components/panel",
-      "destination": "/widgets/panel"
+      "destination": "/components/panel"
     },
     {
       "source": "/components/steps",
-      "destination": "/widgets/steps"
+      "destination": "/components/steps"
     },
     {
       "source": "/components/tabs",
-      "destination": "/widgets/tabs"
+      "destination": "/components/tabs"
     },
     {
       "source": "/components/tooltips",
-      "destination": "/widgets/tooltips"
+      "destination": "/components/tooltips"
     },
     {
       "source": "/components/update",
-      "destination": "/widgets/update"
+      "destination": "/components/update"
     },
     {
       "source": "/api-playground/openapi/advanced-features",
