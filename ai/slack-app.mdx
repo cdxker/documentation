@@ -10,7 +10,15 @@ icon: "slack"
 
 The Slack app adds a bot named `@mintlify` to your Slack workspace that can search your documentation and answer users' questions. The bot responds to direct messages, @mentions, and to any questions in a channel specifically named `#ask-ai`.
 
-The Slack app can incur costs: either using your AI assistant credits or incurring overages.
+## Credit usage
+
+The Slack app consumes [AI assistant credits](/guides/assistant#ai-assistant-credits) from your monthly allowance. Each interaction with the bot uses 1 credit:
+
+- Direct message to `@mintlify` → 1 credit per response
+- @mention in any channel → 1 credit per response  
+- Question in `#ask-ai` channel → 1 credit per response
+
+Monitor your Slack bot usage alongside your documentation assistant usage in your [dashboard](https://dashboard.mintlify.com/products/assistant) to track total credit consumption across all AI features.
 
 ## Setting up the Slack app
 
