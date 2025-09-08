@@ -1,0 +1,94 @@
+---
+title: "Managing content"
+description: "Create new pages, edit existing content, and organize your documentation structure"
+icon: "file-edit"
+---
+
+## Navigating files
+
+Use the sidebar file explorer to browse your documentation, or press <kbd>Command</kbd> + <kbd>P</kbd> (<kbd>Ctrl</kbd> + <kbd>P</kbd> on Windows) to search for files.
+
+## Editing content
+
+Make changes to your pages using visual mode or Markdown mode.
+
+In visual mode, press <kbd>/</kbd> to open the dropdown component menu. Add content blocks, callouts, code blocks and other components to customize your documentation.
+
+<Frame>
+  <img 
+    src="/images/editor/component-menu-light.png" 
+    alt="The unfurled component menu emphasized in the Mintlify web editor" 
+    className="block dark:hidden" 
+  />
+  <img 
+    src="/images/editor/component-menu-dark.png" 
+    alt="The unfurled component menu emphasized in the Mintlify web editor" 
+    className="hidden dark:block" 
+  />
+</Frame>
+
+## Creating new pages
+
+1. Select the **Create a new file** icon in the file explorer.
+   <img
+    src="/images/editor/files-menu-light.png"
+    className="block dark:hidden rounded-2xl border border-gray-100 shadow-lg"
+    style={{
+      width: '268px',
+      height: 'auto',
+    }}
+    alt="Files menu in the web editor."/>
+  <img
+    src="/images/editor/files-menu-dark.png"
+    className="hidden dark:block rounded-2xl border border-white/10 shadow-lg"
+    style={{
+      width: '268px',
+      height: 'auto',
+    }}
+    alt="Files menu in the web editor in dark mode."/>
+1. Enter a filename.
+1. Press <kbd>Enter</kbd> to create the file.
+
+Your new page will open in the editor, ready for content to be added.
+
+## Updating navigation
+
+Add, remove, and reorder pages in your navigation by editing your `docs.json` file:
+
+1. Navigate to your `docs.json` in the file explorer.
+1. Update the `navigation` property to get the navigation structure that you want. See [Navigation](/navigation) for more information.
+
+This example shows how to add a Themes page to the Profile group.
+
+```json title="Adding a Themes page" highlight="18"
+{
+    "navigation": {
+        "groups": [
+            {
+                "group": "Getting started",
+                "pages": [
+                    "index",
+                    "quickstart",
+                    "installation"
+                ]
+            },
+            {
+                "group": "Profile",
+                "pages": [
+                    "settings",
+                    "account-types",
+                    "dashboard",
+                    "themes"
+                ]
+            }
+        ]
+    }
+}
+```
+
+## Content organization tips
+
+- **Use descriptive filenames**: Choose clear, descriptive names for your files that reflect their content.
+- **Organize with folders**: Group related content in folders to keep your documentation structure clean.
+- **Maintain consistent naming**: Use consistent naming conventions across your documentation.
+- **Update navigation regularly**: Keep your navigation structure up to date as you add new content.

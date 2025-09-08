@@ -1,0 +1,75 @@
+---
+title: "Publishing and collaboration"
+description: "Publish your changes and collaborate with your team using pull requests"
+icon: "rocket"
+---
+
+## Publishing changes
+
+Select the **Publish** button to save your changes and make them available.
+
+How your changes are published depends on which branch you are working on:
+
+* **Deployment branch**: Updates your live site immediately.
+* **Other branches**: Creates a pull request so you can review changes before they go live.
+
+<Frame>
+  <img 
+    src="/images/editor/publish-flow-light.png" 
+    alt="The publish button emphasized in the Mintlify web editor" 
+    className="block dark:hidden" 
+  />
+  <img 
+    src="/images/editor/publish-flow-dark.png" 
+    alt="The publish button emphasized in the Mintlify web editor" 
+    className="hidden dark:block" 
+  />
+</Frame>
+
+## Pull requests and reviewing changes
+
+Pull requests let you propose changes from your branch so that other people can review them before merging into your live documentation. This helps ensure that your changes are correct and gives your team a chance to collaborate on content.
+
+<Tip>
+  Even if you're working solo, pull requests are valuable for previewing changes before they go live and maintaining a clear history of updates.
+</Tip>
+
+### Creating a pull request on a branch 
+
+When you're ready to publish changes from your branch:
+
+1. Make sure all your changes are saved on your branch.
+1. Select **Publish Pull Request** in the top-right corner of the editor.
+1. Add a title and description for your pull request. A good title and description help reviewers understand the changes you've made.
+1. Select **Publish Pull Request**.
+
+<Frame>
+  <img 
+    src="/images/editor/pull-request-light.png" 
+    alt="Publish pull request button emphasized in the Mintlify web editor" 
+    className="block dark:hidden" 
+  />
+  <img 
+    src="/images/editor/pull-request-dark.png" 
+    alt="Publish pull request button emphasized in the Mintlify web editor" 
+    className="hidden dark:block" 
+  />
+</Frame>
+
+The web editor will create a pull request in your Git repository and provide a link to view it.
+
+### Reviewing pull requests
+
+Once your pull request is created:
+
+1. **Review your changes**: You and your team members can review your pull request in your Git provider like GitHub or GitLab.
+1. **Make additional changes**: After reviewing, make any changes in your web editor. Saving your changes will update your pull request.
+1. **Merge when ready**: When your pull request is ready, merge it to deploy changes to your live documentation site.
+
+## Collaboration best practices
+
+- **Write clear pull request titles**: Use descriptive titles that explain what the changes accomplish
+- **Add detailed descriptions**: Explain the context and reasoning behind your changes
+- **Review thoroughly**: Take time to review changes before merging
+- **Communicate with your team**: Use comments and discussions to collaborate effectively
+- **Keep changes focused**: Make pull requests that address specific issues or features

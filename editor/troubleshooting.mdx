@@ -1,0 +1,119 @@
+---
+title: "Troubleshooting"
+description: "Solutions to common issues you might encounter with the web editor"
+icon: "wrench"
+---
+
+## Common issues and solutions
+
+<AccordionGroup>
+  <Accordion title="Changes not appearing after publishing">
+    **Possible causes:**
+
+    - Deployment is still in progress
+    - Caching issues in your browser
+
+    **Solutions:**
+
+    1. Check deployment status in your Mintlify Dashboard.
+    2. Try hard refreshing your browser (<kbd>Ctrl</kbd> + <kbd>F5</kbd> or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>).
+    3. Clear your browser cache.
+  </Accordion>
+  <Accordion title="Permission errors when publishing">
+    **Possible causes:**
+
+    - Insufficient permissions to the Git repository
+    - Authentication issues with your Git provider
+
+    **Solutions:**
+
+    1. Verify you have correct access to the repository.
+    2. Check if your Git integration is properly configured.
+    3. Review the [Editor Permissions](/advanced/dashboard/permissions) documentation.
+  </Accordion>
+  <Accordion title="Editor loading issues">
+    **Possible causes:**
+
+    - Network connectivity problems
+    - Large documentation repositories
+
+    **Solutions:**
+
+    1. Check your internet connection.
+    2. Refresh the page and try again.
+    3. Contact support if the issue persists.
+  </Accordion>
+  <Accordion title="File not saving">
+    **Possible causes:**
+
+    - Network connectivity issues
+    - Git repository conflicts
+    - File permission problems
+
+    **Solutions:**
+
+    1. Check your internet connection.
+    2. Try refreshing the page and making the changes again.
+    3. Ensure you have write permissions to the repository.
+    4. Check if someone else is editing the same file.
+  </Accordion>
+  <Accordion title="Branch switching problems">
+    **Possible causes:**
+
+    - Unsaved changes in current branch
+    - Network synchronization issues
+
+    **Solutions:**
+
+    1. Save or discard unsaved changes before switching branches.
+    2. Refresh the editor and try again.
+    3. Check your Git repository status in your Git provider.
+  </Accordion>
+  <Accordion title="Component menu not working">
+    **Possible causes:**
+
+    - Browser compatibility issues
+    - JavaScript errors
+
+    **Solutions:**
+
+    1. Try using a different browser (Chrome, Firefox, Safari).
+    2. Disable browser extensions temporarily.
+    3. Clear your browser cache and cookies.
+    4. Check browser console for error messages.
+  </Accordion>
+</AccordionGroup>
+
+## Performance optimization
+
+### For large repositories
+
+- **Use file search**: Press <kbd>Cmd</kbd> + <kbd>P</kbd> (or <kbd>Ctrl</kbd> + <kbd>P</kbd>) to quickly find files instead of browsing
+- **Work in focused sessions**: Edit one section at a time rather than keeping multiple files open
+- **Regular saves**: Save your work frequently to avoid losing changes
+
+### For slow loading
+
+- **Check network connection**: Ensure you have a stable internet connection
+- **Close unnecessary browser tabs**: Free up browser memory
+- **Use supported browsers**: Chrome, Firefox, Safari, and Edge work best
+
+## Getting help
+
+If you continue to experience issues:
+
+1. **Check the status page**: Visit our status page to see if there are any known issues
+2. **Contact support**: Use the support chat in your dashboard or email support
+3. **Provide details**: Include your browser, operating system, and steps to reproduce the issue
+4. **Share screenshots**: Visual information helps our support team understand the problem
+
+## Browser compatibility
+
+The web editor works best with:
+
+- **Chrome** (recommended)
+- **Firefox**
+- **Safari**
+- **Microsoft Edge**
+
+Older browsers or browsers with strict privacy settings may experience issues.

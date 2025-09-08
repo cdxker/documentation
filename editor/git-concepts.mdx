@@ -1,0 +1,77 @@
+---
+title: "Git concepts for documentation"
+description: "Understand how Git works with the web editor and documentation workflows"
+icon: "git-merge"
+---
+
+## Git fundamentals
+
+The web editor performs Git operations behind the scenes. Understanding these concepts will help you work more effectively with the web editor and collaborate with team members who are working in their local environments.
+
+<AccordionGroup>
+  <Accordion title="Repository">
+    Your documentation's source where all files and their history are stored. The web editor connects to your repository to access and modify content.
+  </Accordion>
+
+  <Accordion title="Commit">
+    A saved snapshot of your changes at a specific point in time.
+  </Accordion>
+
+  <Accordion title="Branch">
+    A separate workspace for making changes without affecting your live documentation. Think of it as a safe sandbox for experiments and larger updates.
+  </Accordion>
+
+  <Accordion title="Deployment branch">
+    The main branch that contains your live documentation content. Changes to this branch are automatically published to your documentation site. Often called `main`.
+  </Accordion>
+
+  <Accordion title="Pull request">
+    A way to propose merging your branch changes into your live documentation. Allows for review and discussion before changes go live. Commonly called a PR.
+  </Accordion>
+
+  <Accordion title="Diff">
+    A diff (or difference) shows the specific changes between two versions of a file. When reviewing pull requests, diffs highlight what has been added, removed, or modified.
+</Accordion>
+</AccordionGroup>
+
+## What the web editor automates
+
+The web editor connects to your Git repository through our [GitHub App](/settings/github) or [GitLab integration](/settings/gitlab) and handles Git automatically. When you:
+
+- **Open a file**: Fetches the latest version from your repository.
+- **Make changes in a file**: Tracks your changes as a draft that can become a commit.
+- **Save changes**: Creates a commit with your changes.
+- **Create a branch**: Creates a new branch in your repository.
+- **Publish on your deployment branch**: Creates a commit and pushes directly to your deployment branch.
+- **Publish on other branches**: Creates a commit and opens a pull request.
+
+## Understanding branches and deployment workflows
+
+### Branch types
+
+- **Deployment branch**: Your live documentation (usually `main` or `master`)
+- **Feature branches**: Temporary branches for specific changes
+- **Development branches**: Long-running branches for ongoing work
+
+### Workflow patterns
+
+1. **Direct to main**: Make changes directly to your deployment branch (immediate publishing)
+2. **Branch workflow**: Create feature branches, make changes, then merge via pull request
+3. **Git Flow**: More complex workflow with multiple branch types for larger teams
+
+## Version control best practices for documentation
+
+- **Commit frequently**: Make small, focused commits with clear messages
+- **Use descriptive commit messages**: Explain what changed and why
+- **Review before merging**: Use pull requests to catch errors and improve content
+- **Keep history clean**: Avoid unnecessary commits and merge conflicts
+- **Backup important work**: Branches provide natural backups of your work
+
+## Working with team members
+
+When collaborating with developers or other team members who use Git directly:
+
+- **Sync regularly**: Pull the latest changes before starting new work
+- **Communicate changes**: Use pull request descriptions to explain your updates
+- **Resolve conflicts**: The web editor will help you resolve merge conflicts when they occur
+- **Follow team conventions**: Adopt your team's branching and commit message standards

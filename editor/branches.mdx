@@ -1,0 +1,50 @@
+---
+title: "Working with branches"
+description: "Use branches to safely make changes without affecting your live documentation"
+icon: "git-branch"
+---
+
+## When to use branches
+
+Branches let you work on changes without affecting the content on your live site. When your changes are ready, you can merge them into your deployment branch with a pull request.
+
+**Best practice: Always work from branches.** This ensures your live documentation stays stable and enables proper review workflows.
+
+## Creating a branch
+
+1. Select the branch name in the editor toolbar (usually `main` by default).
+2. Select **New Branch**.
+3. Enter a descriptive name for your branch like `update-getting-started` or `fix-installation-steps`.
+4. Select **Create Branch**.
+
+<Note>
+  You may need to select your new branch from the dropdown menu if the editor does not automatically switch to it.
+</Note>
+
+## Saving changes on a branch
+
+To save your changes on a branch, select the **Save Changes** button in the top-right corner of the editor. This creates a commit with your changes and pushes it to your branch.
+
+## Switching branches
+
+1. Select the current branch name in the editor toolbar.
+2. Select the branch you want to switch to from the dropdown menu.
+
+<Tip>
+  Any unsaved changes will be lost when switching branches. Make sure to save or publish your work before switching.
+</Tip>
+
+## Branch naming best practices
+
+Use descriptive names that clearly indicate the purpose of your branch:
+
+- **Feature branches**: `feature/add-api-docs`, `feature/new-tutorial`
+- **Fix branches**: `fix/broken-links`, `fix/typo-in-quickstart`
+- **Update branches**: `update/installation-guide`, `update/screenshots`
+- **Content branches**: `content/user-guide`, `content/faq-section`
+
+## Working with multiple branches
+
+- **Keep branches focused**: Each branch should address a specific task or feature
+- **Regular updates**: Periodically sync your branch with the main branch to avoid conflicts
+- **Clean up**: Delete branches after they've been merged to keep your repository organized
