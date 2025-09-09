@@ -1,7 +1,7 @@
 ---
 title: "AWS Route 53 and CloudFront"
 sidebarTitle: "AWS"
-description: "Host documentation at a /docs subdirectory using AWS services"
+description: "Host documentation at a /docs subdirectory using AWS services and fix layout shift issues"
 ---
 
 import Propagating from "/snippets/custom-subpath-propagating.mdx";
@@ -13,6 +13,12 @@ To host your documentation at a `/docs` subpath using AWS Route 53 and CloudFron
 If you use AWS CloudFront as a proxy with Vercel deployments, you must configure CloudFront to avoid interfering with Vercel's domain verification and SSL certificate provisioning.
 
 Improper CloudFront configuration can prevent Vercel from provisioning Let's Encrypt SSL certificates and cause domain verification failures.
+
+### Preventing layout shift issues
+
+When using CloudFront as a reverse proxy for Mintlify documentation, you may experience layout shift where the sidenav snaps up and down during navigation. This occurs because CloudFront may be caching static assets inappropriately, causing the layout to reload on each page navigation.
+
+To fix this issue, you need to configure specific behaviors for static assets and ensure proper caching policies are applied.
 
 ### Required path allowlist
 
@@ -165,6 +171,45 @@ If you follow the above steps, your behaviors should look like this:
 <Frame>
   ![CloudFront "Behaviors" page with 4 behaviors: `/docs/*`, `/docs`, `Default`, and `/.well-known/*`.](/images/cloudfront/all-behaviors.png)
 </Frame>
+
+## CloudFront as reverse proxy (preventing layout shift)
+
+If you're using CloudFront as a reverse proxy for your main domain (not just for subpath routing), you may experience layout shift issues where the sidenav snaps up and down during navigation. This happens because static assets aren't being cached properly, causing layout resources to reload on each page navigation.
+
+To fix this, you need to configure specific behaviors for static assets. Add the following behaviors to your CloudFront distribution (ordered from most specific to least specific):
+
+### `/mintlify-assets/_next/static/*` - Static Assets
+
+Create a behavior for static assets with these settings:
+
+- **Path pattern**: `/mintlify-assets/_next/static/*`
+- **Cache policy**: `CachingOptimized`
+- **Origin request policy**: `AllViewerExceptHostHeader`
+- **Origin and origin groups**: Point to your Mintlify origin (e.g., `[SUBDOMAIN].mintlify.dev`)
+
+This ensures that static assets (CSS, JavaScript, fonts, images) are properly cached and don't reload on each navigation.
+
+### `*` (Default) - HTML and App Router Navigation
+
+Update your default behavior with these settings:
+
+- **Path pattern**: `*` (this should be your default behavior)
+- **Cache policy**: `CachingDisabled` 
+- **Origin request policy**: `AllViewerExceptHostHeader`
+- **Origin and origin groups**: Point to your Mintlify origin (e.g., `[SUBDOMAIN].mintlify.dev`)
+
+<Warning>
+The default behavior must use `CachingDisabled` because React Server Components (RSC) payloads with `?_rsc=` parameters vary and should not be cached. Caching these dynamic payloads can cause stale content and navigation issues.
+</Warning>
+
+### Behavior ordering importance
+
+Make sure the static assets behavior (`/mintlify-assets/_next/static/*`) is listed **above** the default behavior (`*`) in your CloudFront behaviors list. CloudFront evaluates behaviors in order from top to bottom, so the more specific pattern must come first.
+
+With these changes:
+- Static assets will be cached properly, preventing layout shifts
+- Only new page MDX content will be fetched during navigation
+- Layout assets won't reload, keeping the interface stable
 
 ## Preview distribution
 
