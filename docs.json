@@ -137,6 +137,7 @@
                 "icon": "folder",
                 "pages": [
                   "advanced/subpath/cloudflare",
+                  "advanced/subpath/nginx",
                   "advanced/subpath/route53-cloudfront",
                   "advanced/subpath/vercel"
                 ]
