@@ -1,0 +1,76 @@
+---
+title: "Nginx"
+description: "Host documentation at a /docs subdirectory using nginx reverse proxy"
+---
+
+Use nginx as a reverse proxy to serve your Mintlify documentation at a custom subdirectory like `/docs` while keeping your main site separate.
+
+## Basic configuration
+
+Add this configuration to your nginx server block:
+
+```nginx
+server {
+    listen 80;
+    server_name yourdomain.com;
+
+    # Main site (your existing configuration)
+    location / {
+        # Your existing site configuration
+    }
+
+    # Documentation proxy
+    location /docs {
+        proxy_pass https://your-subdomain.mintlify.dev;
+        proxy_set_header Host your-subdomain.mintlify.dev;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Vercel domain verification
+    location /.well-known/ {
+        proxy_pass https://your-subdomain.mintlify.dev;
+        proxy_set_header Host your-subdomain.mintlify.dev;
+    }
+}
+```
+
+Replace `your-subdomain.mintlify.dev` with your actual Mintlify subdomain.
+
+## SSL configuration
+
+For HTTPS, add SSL configuration:
+
+```nginx
+server {
+    listen 443 ssl;
+    server_name yourdomain.com;
+    
+    ssl_certificate /path/to/your/certificate.crt;
+    ssl_certificate_key /path/to/your/private.key;
+
+    # Documentation proxy
+    location /docs {
+        proxy_pass https://your-subdomain.mintlify.dev;
+        proxy_set_header Host your-subdomain.mintlify.dev;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+
+    # Vercel domain verification
+    location /.well-known/ {
+        proxy_pass https://your-subdomain.mintlify.dev;
+        proxy_set_header Host your-subdomain.mintlify.dev;
+    }
+}
+```
+
+## Test your setup
+
+1. Reload nginx: `sudo nginx -s reload`
+2. Visit `https://yourdomain.com/docs` to verify your documentation loads
+3. Check that `https://yourdomain.com/.well-known/vercel/` returns a response for domain verification
+
+That's it! Your documentation will now be available at `/docs` on your main domain.
