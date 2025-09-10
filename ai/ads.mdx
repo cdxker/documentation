@@ -1,0 +1,118 @@
+---
+title: AI ads
+description: Learn how to implement and optimize AI-powered advertising in your documentation
+---
+
+# AI ads
+
+Use AI ads to create intelligent, contextual advertising experiences that adapt to your users' needs and documentation content.
+
+## Overview
+
+AI ads leverage machine learning to deliver personalized advertising content based on:
+- User behavior and preferences
+- Current documentation context
+- Content relevance scoring
+- Real-time optimization
+
+## Getting started
+
+### Prerequisites
+
+- Active documentation site
+- Analytics integration (recommended)
+- Ad network account
+
+### Basic setup
+
+1. **Configure your ad placement**
+   ```javascript
+   // Add to your site configuration
+   {
+     ads: {
+       enabled: true,
+       provider: 'ai-powered',
+       contextual: true
+     }
+   }
+   ```
+
+2. **Set up targeting parameters**
+   ```javascript
+   const adConfig = {
+     targeting: {
+       content: true,
+       userBehavior: true,
+       location: false
+     },
+     frequency: {
+       maxPerPage: 2,
+       cooldown: '5m'
+     }
+   }
+   ```
+
+## Configuration options
+
+### Contextual targeting
+
+Enable AI to analyze page content and serve relevant ads:
+
+```javascript
+{
+  contextual: {
+    enabled: true,
+    keywords: 'auto', // or specify custom keywords
+    sentiment: true,
+    topics: ['technology', 'development', 'tools']
+  }
+}
+```
+
+### User experience
+
+Optimize ad placement for better user experience:
+
+- **Non-intrusive placement** - Ads appear between content sections
+- **Relevance scoring** - Only show ads with high relevance scores
+- **Load optimization** - Lazy load ads to maintain page performance
+
+## Best practices
+
+- Keep ads relevant to your documentation content
+- Monitor performance metrics and user engagement
+- Test different placements and formats
+- Respect user privacy and preferences
+- Ensure ads don't interfere with documentation usability
+
+## Analytics and optimization
+
+Track ad performance with built-in analytics:
+
+- Click-through rates
+- User engagement metrics
+- Revenue attribution
+- Content correlation analysis
+
+## Troubleshooting
+
+### Common issues
+
+**Ads not displaying**
+- Check your ad network configuration
+- Verify targeting parameters
+- Ensure content meets ad policy requirements
+
+**Poor relevance**
+- Review contextual targeting settings
+- Update keyword lists
+- Check content categorization
+
+**Performance impact**
+- Enable lazy loading
+- Optimize ad sizes
+- Monitor Core Web Vitals
+
+## Support
+
+For additional help with AI ads implementation, contact our support team or check the community forums.
