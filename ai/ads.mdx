@@ -1,0 +1,121 @@
+---
+title: AI ads
+description: Learn how to implement and optimize AI-powered advertising in your documentation
+---
+
+# AI ads
+
+Use AI ads to create intelligent, contextual advertising experiences that adapt to your users' needs and documentation content.
+
+## Overview
+
+AI ads leverage machine learning to deliver personalized advertising content based on:
+- User behavior and preferences
+- Current documentation context
+- Content relevance scoring
+- Real-time optimization
+
+## Getting started
+
+### Prerequisites
+
+- Active documentation site
+- Analytics integration (recommended)
+- Ad network account
+
+### Basic setup
+
+1. **Configure your ad placement**
+   ```javascript
+   // Add to your site configuration
+   {
+     ads: {
+       enabled: true,
+       provider: "ai-ads",
+       contextual: true
+     }
+   }
+   ```
+
+2. **Set up targeting parameters**
+   ```javascript
+   {
+     targeting: {
+       content: true,
+       userBehavior: true,
+       location: false
+     }
+   }
+   ```
+
+3. **Initialize the AI ads system**
+   ```javascript
+   import { initAIAds } from '@your-platform/ai-ads';
+   
+   initAIAds({
+     apiKey: 'your-api-key',
+     siteId: 'your-site-id'
+   });
+   ```
+
+## Configuration options
+
+### Contextual targeting
+
+Enable content-aware ad placement:
+
+```javascript
+{
+  contextual: {
+    enabled: true,
+    relevanceThreshold: 0.7,
+    categories: ['tech', 'development', 'tools']
+  }
+}
+```
+
+### Performance optimization
+
+Configure AI-driven performance settings:
+
+```javascript
+{
+  optimization: {
+    autoRefresh: true,
+    loadTesting: true,
+    performanceMetrics: true
+  }
+}
+```
+
+## Best practices
+
+- **Content relevance**: Ensure ads match your documentation topics
+- **User experience**: Maintain fast page load times
+- **Privacy compliance**: Follow GDPR and privacy regulations
+- **Performance monitoring**: Track ad performance and user engagement
+
+## Troubleshooting
+
+### Common issues
+
+**Ads not displaying**
+- Verify API key configuration
+- Check ad blocker compatibility
+- Ensure proper initialization
+
+**Poor performance**
+- Review targeting parameters
+- Optimize content relevance scoring
+- Monitor loading times
+
+**Low engagement**
+- Adjust contextual targeting
+- Review ad placement positions
+- Test different ad formats
+
+## Next steps
+
+- Set up [analytics integration](/integrations/analytics/overview) to track ad performance
+- Configure [personalization](/authentication-personalization/personalization-setup) for better targeting
+- Review [performance optimization](/guides/analytics) best practices
