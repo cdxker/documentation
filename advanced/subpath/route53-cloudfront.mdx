@@ -99,6 +99,10 @@ Behaviors in CloudFront enable control over the subpath logic. At a high level, 
 
 2. Select the **Create behavior** button and create the following behaviors.
 
+<Warning>
+**Important for layout stability**: The behaviors below must be ordered from most specific to least specific in your CloudFront distribution. CloudFront evaluates behaviors in order, so proper ordering prevents layout shifts and ensures static assets load correctly.
+</Warning>
+
 ### `/.well-known/*`
 
 Create behaviors for Vercel domain verification paths with a **Path pattern** of `/.well-known/*` and set **Origin and origin groups** to your docs URL.
