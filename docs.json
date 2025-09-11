@@ -41,6 +41,7 @@
             "group": "AI optimization",
             "pages": [
               "guides/assistant",
+              "ai-ads",
               "ai/llmstxt",
               "ai/contextual-menu",
               "ai/daude-dode",
