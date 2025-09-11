@@ -119,6 +119,20 @@ If `.well-known/*` is too generic, it can be narrowed down to 2 behaviors at a m
   - `/.well-known/acme-challenge/*` - Required for Let's Encrypt certificate verification
 </Info>
 
+### `/mintlify-assets/_next/static/*` (Static assets)
+
+<Warning>
+**Critical for preventing layout shifts**: This behavior must be listed above the default behavior in your CloudFront behaviors list to prevent sidebar snapping and layout instability.
+</Warning>
+
+Create a behavior with a **Path pattern** of `/mintlify-assets/_next/static/*` and **Origin and origin groups** pointing to your `.mintlify.dev` URL.
+
+- Set \"Cache policy\" to **CachingOptimized** to enable efficient caching of static assets
+- Set \"Origin request policy\" to **AllViewerExceptHostHeader** 
+- Set \"Viewer protocol policy\" to **Redirect HTTP to HTTPS**
+
+This behavior ensures that static assets (CSS, JavaScript, fonts) are served efficiently without causing layout shifts during navigation. Without this configuration, the sidebar may snap up and down as assets reload on each page change.
+
 ### `/docs`
 
 Create a behavior with a **Path pattern** of `/docs` with **Origin and origin groups** pointing to the `.mintlify.dev` URL (in our case `acme.mintlify.dev`).
