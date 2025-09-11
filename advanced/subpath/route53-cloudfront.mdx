@@ -174,7 +174,11 @@ Lastly, we're going to edit the `Default (*)` behavior.
   ![CloudFront "Edit behavior" page with the "Origin and origin groups" input field highlighted.](/images/cloudfront/default-behavior-2.png)
 </Frame>
 
-2. Select **Save changes**.
+2. **Important for preventing layout shifts**: Set the \"Cache policy\" to **CachingDisabled** for the default behavior. This prevents caching of RSC (React Server Components) payloads that vary with `?_rsc=` parameters and ensures proper navigation without layout instability.
+
+3. Set \"Origin request policy\" to **AllViewerExceptHostHeader**.
+
+4. Select **Save changes**.
 
 ### Check behaviors are set up correctly
 
