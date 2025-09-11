@@ -230,4 +230,14 @@ Now, we're going to bring the functionality of the CloudFront distribution into 
 
 Your documentation is now live at `/docs` for your primary domain.
 
+## Troubleshooting layout shifts
+
+If you experience sidebar snapping or layout instability after setting up CloudFront, ensure that:
+
+1. The `/mintlify-assets/_next/static/*` behavior is configured with **CachingOptimized** cache policy
+2. The `Default (*)` behavior uses **CachingDisabled** cache policy to prevent RSC payload caching
+3. Behaviors are ordered correctly with static assets behavior above the default behavior
+
+These configurations prevent layout shifts by ensuring static assets load efficiently and dynamic content isn't incorrectly cached.
+
 <Propagating />
