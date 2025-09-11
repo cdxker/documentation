@@ -43,6 +43,7 @@
               "guides/assistant",
               "ai/llmstxt",
               "ai/contextual-menu",
+              "ai/ai-ads",
               "ai/daude-dode",
               "ai/model-context-protocol",
               "ai/markdown-export",
