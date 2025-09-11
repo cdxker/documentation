@@ -46,6 +46,7 @@
               "ai/daude-dode",
               "ai/model-context-protocol",
               "ai/markdown-export",
+              "ai/ai-ads",
               "guides/geo",
               "guides/claude-code",
               "guides/cursor",

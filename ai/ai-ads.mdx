@@ -1,0 +1,174 @@
+---
+title: AI ads
+description: Monetize your documentation with AI-powered contextual advertising
+---
+
+Use AI ads to generate revenue from your documentation through intelligent, contextual advertising that enhances rather than disrupts the user experience.
+
+## Overview
+
+AI ads leverage machine learning to display relevant advertisements based on your documentation content and user behavior. The system analyzes page content, user engagement patterns, and contextual signals to serve targeted ads that align with your audience's interests.
+
+## Setup
+
+Add the AI ads configuration to your `docs.json` file:
+
+```json
+{
+  "integrations": {
+    "aiAds": {
+      "enabled": true,
+      "provider": "mintlify",
+      "placement": ["sidebar", "inline", "footer"],
+      "targeting": {
+        "contextual": true,
+        "behavioral": true,
+        "geographic": true
+      }
+    }
+  }
+}
+```
+
+## Configuration options
+
+### Placement
+
+Control where ads appear in your documentation:
+
+- `sidebar` - Display ads in the right sidebar
+- `inline` - Insert ads between content sections
+- `footer` - Show ads at the bottom of pages
+- `header` - Display banner ads at the top
+
+### Targeting
+
+Configure how ads are targeted to your users:
+
+- `contextual` - Match ads to page content and topics
+- `behavioral` - Use reading patterns and engagement data
+- `geographic` - Target based on user location
+- `demographic` - Target based on user profile data
+
+### Ad formats
+
+Choose from multiple ad formats:
+
+- `banner` - Traditional banner advertisements
+- `native` - Ads that match your content style
+- `video` - Video advertisements for multimedia content
+- `interactive` - Engaging interactive ad experiences
+
+## Revenue optimization
+
+### Performance tracking
+
+Monitor ad performance through the Mintlify dashboard:
+
+- Click-through rates (CTR)
+- Revenue per page view
+- User engagement metrics
+- A/B testing results
+
+### Content optimization
+
+Improve ad relevance and revenue:
+
+- Use descriptive headings and clear content structure
+- Include relevant keywords naturally in your content
+- Maintain consistent topic focus within pages
+- Update content regularly to maintain relevance
+
+## Privacy and compliance
+
+AI ads are designed with privacy in mind:
+
+- GDPR and CCPA compliant by default
+- User consent management included
+- No personally identifiable information stored
+- Transparent data usage policies
+
+## Best practices
+
+### Content guidelines
+
+- Maintain clear separation between content and ads
+- Use consistent styling for ad placements
+- Ensure ads don't interfere with navigation
+- Test ad placements with real users
+
+### Performance optimization
+
+- Monitor page load times with ads enabled
+- Use lazy loading for non-critical ad placements
+- Optimize ad density based on user engagement
+- A/B test different ad configurations
+
+## Troubleshooting
+
+### Common issues
+
+**Ads not displaying**
+- Verify your configuration in `docs.json`
+- Check that your site has sufficient traffic
+- Ensure content meets advertiser guidelines
+
+**Low revenue**
+- Review ad placement and density
+- Optimize content for better targeting
+- Consider adjusting targeting parameters
+
+**Performance impact**
+- Enable lazy loading for ads
+- Optimize ad placement locations
+- Monitor Core Web Vitals metrics
+
+### Support
+
+For technical support with AI ads:
+
+1. Check the [troubleshooting guide](/contact-support)
+2. Review your dashboard analytics
+3. Contact support with specific error messages
+
+## Advanced features
+
+### Custom targeting
+
+Create custom audience segments:
+
+```json
+{
+  "aiAds": {
+    "customTargeting": {
+      "segments": [
+        {
+          "name": "developers",
+          "criteria": {
+            "pages": ["/api/*", "/guides/development/*"],
+            "engagement": "high"
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+### Revenue sharing
+
+Configure revenue sharing with content contributors:
+
+```json
+{
+  "aiAds": {
+    "revenueSharing": {
+      "enabled": true,
+      "contributors": {
+        "author1": 0.3,
+        "author2": 0.2
+      }
+    }
+  }
+}
+```
