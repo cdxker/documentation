@@ -182,11 +182,13 @@ Lastly, we're going to edit the `Default (*)` behavior.
 
 ### Check behaviors are set up correctly
 
-If you follow the above steps, your behaviors should look like this:
+If you follow the above steps, your behaviors should include these required configurations in order:
 
-<Frame>
-  ![CloudFront "Behaviors" page with 4 behaviors: `/docs/*`, `/docs`, `Default`, and `/.well-known/*`.](/images/cloudfront/all-behaviors.png)
-</Frame>
+1. `/.well-known/*` - Cache policy: CachingDisabled, Origin: docs URL
+2. `/mintlify-assets/_next/static/*` - Cache policy: CachingOptimized, Origin request policy: AllViewerExceptHostHeader, Origin: docs URL  
+3. `/docs` - Cache policy: CachingOptimized, Origin request policy: VercelCloudFrontProxy, Origin: docs URL
+4. `/docs/*` - Cache policy: CachingOptimized, Origin request policy: VercelCloudFrontProxy, Origin: docs URL
+5. `Default (*)` - Cache policy: CachingDisabled, Origin request policy: AllViewerExceptHostHeader, Origin: staging URL
 
 ## Preview distribution
 
