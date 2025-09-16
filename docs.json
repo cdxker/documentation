@@ -23,6 +23,7 @@
             "pages": [
               "index",
               "quickstart",
+              "installation-overview",
               "installation",
               "editor"
             ]
