@@ -1,0 +1,278 @@
+---
+title: "AI ads"
+description: "Monetize your documentation with AI-powered contextual advertising that enhances user experience"
+icon: "megaphone"
+---
+
+<Note>
+AI ads are currently in beta. [Contact support](/contact-support) to enable this feature for your documentation.
+</Note>
+
+AI ads intelligently display relevant, contextual advertisements within your documentation without disrupting the user experience. Using advanced AI algorithms, these ads match your content's context to show users products, services, and resources that genuinely complement what they're reading.
+
+## Quick setup
+
+Enable AI ads in your documentation with minimal configuration:
+
+<Steps>
+  <Step title="Enable AI ads">
+    Add the AI ads configuration to your `docs.json`:
+    ```json
+    {
+      "ai": {
+        "ads": {
+          "enabled": true,
+          "placement": "contextual",
+          "frequency": "moderate"
+        }
+      }
+    }
+    ```
+  </Step>
+  <Step title="Configure ad preferences">
+    Set your content categories and targeting preferences in the dashboard under **AI Settings > Advertising**.
+  </Step>
+  <Step title="Review and approve">
+    All ads are pre-screened for relevance and quality. You can review and approve ads before they appear.
+  </Step>
+</Steps>
+
+## How AI ads work
+
+AI ads analyze your documentation content in real-time to understand:
+
+- **Content context** - The specific topics, technologies, and concepts being discussed
+- **User intent** - What users are trying to accomplish based on their reading patterns
+- **Technical depth** - Whether content is beginner, intermediate, or advanced level
+- **Industry relevance** - The business domain and use cases your content addresses
+
+This analysis enables precise ad matching that feels natural and helpful rather than intrusive.
+
+<CardGroup cols={2}>
+  <Card title="Contextual relevance" icon="target">
+    Ads match the specific section content users are reading, not just general page topics
+  </Card>
+  <Card title="Non-intrusive placement" icon="layout">
+    Ads appear in natural content breaks and complement the reading flow
+  </Card>
+  <Card title="Quality filtering" icon="shield-check">
+    All ads are vetted for relevance, quality, and appropriateness to technical audiences
+  </Card>
+  <Card title="Revenue optimization" icon="trending-up">
+    AI continuously optimizes ad selection to maximize both relevance and revenue
+  </Card>
+</CardGroup>
+
+## Ad placement options
+
+Choose how and where ads appear in your documentation:
+
+### Contextual placement (recommended)
+
+Ads appear naturally within content at logical break points:
+
+```mdx
+# API Authentication
+
+Learn how to authenticate requests to our API using tokens...
+
+<!-- AI ad appears here if relevant to authentication/security -->
+
+## Getting your API key
+
+To get started, you'll need to generate an API key...
+```
+
+### Sidebar placement
+
+Ads appear in a dedicated sidebar section:
+
+```json
+{
+  "ai": {
+    "ads": {
+      "placement": "sidebar",
+      "position": "right"
+    }
+  }
+}
+```
+
+### Footer placement
+
+Ads appear at the bottom of pages:
+
+```json
+{
+  "ai": {
+    "ads": {
+      "placement": "footer",
+      "style": "banner"
+    }
+  }
+}
+```
+
+## Configuration options
+
+Customize AI ads behavior to match your documentation style:
+
+### Frequency control
+
+Set how often ads appear:
+
+```json
+{
+  "ai": {
+    "ads": {
+      "frequency": "low",      // 1-2 ads per page
+      "frequency": "moderate", // 2-4 ads per page  
+      "frequency": "high"      // 4-6 ads per page
+    }
+  }
+}
+```
+
+### Content filtering
+
+Control which types of ads can appear:
+
+```json
+{
+  "ai": {
+    "ads": {
+      "categories": {
+        "allowed": ["developer-tools", "cloud-services", "security"],
+        "blocked": ["gambling", "adult-content"]
+      }
+    }
+  }
+}
+```
+
+### Styling customization
+
+Match ads to your documentation theme:
+
+```json
+{
+  "ai": {
+    "ads": {
+      "styling": {
+        "theme": "minimal",
+        "borderRadius": "8px",
+        "backgroundColor": "var(--background-secondary)"
+      }
+    }
+  }
+}
+```
+
+## Revenue and analytics
+
+Track your AI ads performance through the Mintlify dashboard:
+
+### Revenue metrics
+- **Daily/monthly earnings** from ad impressions and clicks
+- **Revenue per page view** to identify your highest-performing content
+- **Payout schedule** and payment method configuration
+
+### Performance analytics
+- **Click-through rates** by content category and ad placement
+- **User engagement** impact on documentation usage
+- **A/B testing** results for different ad configurations
+
+### Content insights
+- **Top-performing pages** for ad revenue
+- **Content gaps** where relevant ads aren't available
+- **Optimization suggestions** to improve ad relevance and earnings
+
+## Best practices
+
+Maximize revenue while maintaining excellent user experience:
+
+<Accordion title="Content optimization">
+  - Write comprehensive, authoritative content that attracts quality advertisers
+  - Use clear headings and structure to help AI understand content context
+  - Include relevant technical keywords naturally throughout your content
+  - Keep content updated to maintain advertiser interest and relevance
+</Accordion>
+
+<Accordion title="User experience">
+  - Start with low ad frequency and increase gradually based on user feedback
+  - Monitor bounce rates and engagement metrics after enabling ads
+  - Use contextual placement to make ads feel like helpful recommendations
+  - Regularly review ad quality and block irrelevant advertisers
+</Accordion>
+
+<Accordion title="Revenue optimization">
+  - Focus on high-traffic pages with engaged users
+  - Create content around high-value topics in your industry
+  - Use analytics to identify optimal ad placement and frequency
+  - Experiment with different ad formats to find what works best
+</Accordion>
+
+## Privacy and compliance
+
+AI ads respect user privacy and comply with relevant regulations:
+
+- **GDPR compliance** - Users can opt out of personalized ads
+- **No personal data collection** - Ads are based on content context, not user tracking
+- **Transparent labeling** - All ads are clearly marked as sponsored content
+- **Cookie-free operation** - No tracking cookies are used for ad targeting
+
+## Integration with AI features
+
+AI ads work seamlessly with other Mintlify AI features:
+
+<CardGroup cols={3}>
+  <Card title="llms.txt" icon="file-text" href="/ai/llmstxt">
+    Helps AI understand your content structure for better ad targeting
+  </Card>
+  <Card title="Contextual menu" icon="menu" href="/ai/contextual-menu">
+    Provides additional context for more relevant ad matching
+  </Card>
+  <Card title="Assistant" icon="bot" href="/guides/assistant">
+    Can recommend relevant products and services through conversational ads
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+Common issues and solutions:
+
+<AccordionGroup>
+  <Accordion title="Ads not appearing">
+    - Verify AI ads are enabled in your `docs.json`
+    - Check that your content meets minimum length requirements (500+ words)
+    - Ensure your documentation has sufficient traffic (100+ daily views)
+    - Contact support if ads still don't appear after 24 hours
+  </Accordion>
+  
+  <Accordion title="Irrelevant ads showing">
+    - Review your content categories in the dashboard
+    - Add specific keywords to your content to improve context understanding
+    - Block specific advertisers or categories that aren't relevant
+    - Use the feedback system to report irrelevant ads
+  </Accordion>
+  
+  <Accordion title="Low revenue">
+    - Increase content depth and technical detail to attract premium advertisers
+    - Focus on high-value topics in your industry
+    - Experiment with ad placement and frequency
+    - Analyze which pages generate the most revenue and create similar content
+  </Accordion>
+</AccordionGroup>
+
+## Getting started
+
+Ready to monetize your documentation with AI ads?
+
+1. **[Contact our team](/contact-support)** to join the AI ads beta program
+2. **Review the setup guide** and configure your preferences
+3. **Monitor performance** and optimize based on analytics
+4. **Scale up** ad frequency as you see positive results
+
+<Note>
+AI ads are designed to enhance, not replace, your existing monetization strategies. They work best as part of a comprehensive approach to documentation sustainability.
+</Note>
