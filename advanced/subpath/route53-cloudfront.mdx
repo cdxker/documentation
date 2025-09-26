@@ -99,6 +99,10 @@ Behaviors in CloudFront enable control over the subpath logic. At a high level, 
 
 2. Select the **Create behavior** button and create the following behaviors.
 
+<Warning>
+**Important for layout stability**: The behaviors below must be ordered from most specific to least specific in your CloudFront distribution. CloudFront evaluates behaviors in order, so proper ordering prevents layout shifts and ensures static assets load correctly.
+</Warning>
+
 ### `/.well-known/*`
 
 Create behaviors for Vercel domain verification paths with a **Path pattern** of `/.well-known/*` and set **Origin and origin groups** to your docs URL.
@@ -114,6 +118,20 @@ If `.well-known/*` is too generic, it can be narrowed down to 2 behaviors at a m
   - `/.well-known/vercel/*` - Required for Vercel domain verification
   - `/.well-known/acme-challenge/*` - Required for Let's Encrypt certificate verification
 </Info>
+
+### `/mintlify-assets/_next/static/*` (Static assets)
+
+<Warning>
+**Critical for preventing layout shifts**: This behavior must be listed above the default behavior in your CloudFront behaviors list to prevent sidebar snapping and layout instability.
+</Warning>
+
+Create a behavior with a **Path pattern** of `/mintlify-assets/_next/static/*` and **Origin and origin groups** pointing to your `.mintlify.dev` URL.
+
+- Set \"Cache policy\" to **CachingOptimized** to enable efficient caching of static assets
+- Set \"Origin request policy\" to **AllViewerExceptHostHeader** 
+- Set \"Viewer protocol policy\" to **Redirect HTTP to HTTPS**
+
+This behavior ensures that static assets (CSS, JavaScript, fonts) are served efficiently without causing layout shifts during navigation. Without this configuration, the sidebar may snap up and down as assets reload on each page change.
 
 ### `/docs`
 
@@ -156,15 +174,21 @@ Lastly, we're going to edit the `Default (*)` behavior.
   ![CloudFront "Edit behavior" page with the "Origin and origin groups" input field highlighted.](/images/cloudfront/default-behavior-2.png)
 </Frame>
 
-2. Select **Save changes**.
+2. **Important for preventing layout shifts**: Set the \"Cache policy\" to **CachingDisabled** for the default behavior. This prevents caching of RSC (React Server Components) payloads that vary with `?_rsc=` parameters and ensures proper navigation without layout instability.
+
+3. Set \"Origin request policy\" to **AllViewerExceptHostHeader**.
+
+4. Select **Save changes**.
 
 ### Check behaviors are set up correctly
 
-If you follow the above steps, your behaviors should look like this:
+If you follow the above steps, your behaviors should include these required configurations in order:
 
-<Frame>
-  ![CloudFront "Behaviors" page with 4 behaviors: `/docs/*`, `/docs`, `Default`, and `/.well-known/*`.](/images/cloudfront/all-behaviors.png)
-</Frame>
+1. `/.well-known/*` - Cache policy: CachingDisabled, Origin: docs URL
+2. `/mintlify-assets/_next/static/*` - Cache policy: CachingOptimized, Origin request policy: AllViewerExceptHostHeader, Origin: docs URL  
+3. `/docs` - Cache policy: CachingOptimized, Origin request policy: VercelCloudFrontProxy, Origin: docs URL
+4. `/docs/*` - Cache policy: CachingOptimized, Origin request policy: VercelCloudFrontProxy, Origin: docs URL
+5. `Default (*)` - Cache policy: CachingDisabled, Origin request policy: AllViewerExceptHostHeader, Origin: staging URL
 
 ## Preview distribution
 
@@ -207,5 +231,15 @@ Now, we're going to bring the functionality of the CloudFront distribution into 
 </Note>
 
 Your documentation is now live at `/docs` for your primary domain.
+
+## Troubleshooting layout shifts
+
+If you experience sidebar snapping or layout instability after setting up CloudFront, ensure that:
+
+1. The `/mintlify-assets/_next/static/*` behavior is configured with **CachingOptimized** cache policy
+2. The `Default (*)` behavior uses **CachingDisabled** cache policy to prevent RSC payload caching
+3. Behaviors are ordered correctly with static assets behavior above the default behavior
+
+These configurations prevent layout shifts by ensuring static assets load efficiently and dynamic content isn't incorrectly cached.
 
 <Propagating />
