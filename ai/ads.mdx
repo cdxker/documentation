@@ -134,53 +134,134 @@ Ads appear at the bottom of pages:
 
 ## Configuration options
 
-Customize AI ads behavior to match your documentation style:
+Customize AI ads behavior to match your documentation style and audience:
 
-### Frequency control
+### Complete configuration example
 
-Set how often ads appear:
-
-```json
-{
-  "ai": {
-    "ads": {
-      "frequency": "low",      // 1-2 ads per page
-      "frequency": "moderate", // 2-4 ads per page  
-      "frequency": "high"      // 4-6 ads per page
-    }
-  }
-}
-```
-
-### Content filtering
-
-Control which types of ads can appear:
+Here's a comprehensive configuration for a developer-focused documentation site:
 
 ```json
 {
   "ai": {
     "ads": {
+      "enabled": true,
+      "placement": "contextual",
+      "frequency": "moderate",
       "categories": {
-        "allowed": ["developer-tools", "cloud-services", "security"],
-        "blocked": ["gambling", "adult-content"]
+        "allowed": [
+          "developer-tools",
+          "cloud-services", 
+          "security",
+          "databases",
+          "monitoring",
+          "ci-cd"
+        ],
+        "blocked": [
+          "gambling",
+          "adult-content",
+          "cryptocurrency"
+        ]
+      },
+      "styling": {
+        "theme": "minimal",
+        "borderRadius": "8px",
+        "backgroundColor": "var(--background-secondary)",
+        "textColor": "var(--text-primary)",
+        "accentColor": "var(--primary)"
+      },
+      "targeting": {
+        "minContentLength": 500,
+        "excludePages": ["/pricing", "/contact"],
+        "priorityKeywords": ["API", "integration", "authentication"]
       }
     }
   }
 }
 ```
 
-### Styling customization
+### Frequency control
 
-Match ads to your documentation theme:
+Choose the right balance for your audience:
+
+<Tabs>
+  <Tab title="Low frequency">
+    ```json
+    {
+      "ai": {
+        "ads": {
+          "frequency": "low"  // 1-2 ads per page
+        }
+      }
+    }
+    ```
+    **Best for:** Premium documentation, highly technical content, or when user experience is the top priority.
+  </Tab>
+  
+  <Tab title="Moderate frequency">
+    ```json
+    {
+      "ai": {
+        "ads": {
+          "frequency": "moderate"  // 2-4 ads per page
+        }
+      }
+    }
+    ```
+    **Best for:** Most documentation sites. Balances revenue potential with user experience.
+  </Tab>
+  
+  <Tab title="High frequency">
+    ```json
+    {
+      "ai": {
+        "ads": {
+          "frequency": "high"  // 4-6 ads per page
+        }
+      }
+    }
+    ```
+    **Best for:** High-traffic sites with longer content pages and engaged audiences.
+  </Tab>
+</Tabs>
+
+### Advanced targeting
+
+Fine-tune which content gets ads and how they're displayed:
+
+```json
+{
+  "ai": {
+    "ads": {
+      "targeting": {
+        "minContentLength": 500,
+        "excludePages": ["/pricing", "/contact", "/legal/*"],
+        "includePages": ["/guides/*", "/tutorials/*"],
+        "priorityKeywords": ["API", "SDK", "integration"],
+        "audienceLevel": "intermediate"
+      }
+    }
+  }
+}
+```
+
+### Custom styling
+
+Make ads feel native to your documentation:
 
 ```json
 {
   "ai": {
     "ads": {
       "styling": {
-        "theme": "minimal",
-        "borderRadius": "8px",
-        "backgroundColor": "var(--background-secondary)"
+        "theme": "custom",
+        "borderRadius": "12px",
+        "backgroundColor": "#f8fafc",
+        "borderColor": "#e2e8f0",
+        "textColor": "#334155",
+        "linkColor": "#0ea5e9",
+        "fontSize": "14px",
+        "padding": "16px",
+        "margin": "24px 0"
       }
     }
   }
