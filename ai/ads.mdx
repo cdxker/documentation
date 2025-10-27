@@ -1,0 +1,132 @@
+---
+title: "AI Ads"
+description: "Integrate AI-powered advertising solutions into your documentation"
+icon: "bullhorn"
+---
+
+AI Ads allows you to seamlessly integrate intelligent advertising solutions into your documentation platform. Leverage artificial intelligence to deliver personalized, contextually relevant advertisements that enhance user experience while generating revenue.
+
+## Overview
+
+AI Ads uses machine learning algorithms to analyze user behavior, content context, and browsing patterns to serve the most relevant advertisements. This results in higher engagement rates, better user experience, and increased revenue potential.
+
+### Key Features
+
+- **Contextual Targeting**: Ads are matched to the content users are currently viewing
+- **Behavioral Analysis**: AI learns from user interactions to improve ad relevance
+- **Non-Intrusive Design**: Ads are seamlessly integrated into your documentation layout
+- **Performance Analytics**: Real-time insights into ad performance and user engagement
+- **Revenue Optimization**: AI automatically adjusts ad placement and timing for maximum revenue
+
+## Getting Started
+
+To enable AI Ads in your documentation, you'll need to configure the advertising settings in your `docs.json` file.
+
+```json
+{
+  "ads": {
+    "enabled": true,
+    "provider": "ai-ads",
+    "settings": {
+      "contextual": true,
+      "behavioral": true,
+      "placement": "auto"
+    }
+  }
+}
+```
+
+## Configuration Options
+
+<ResponseField name="enabled" type="boolean" default="false">
+  Enable or disable AI Ads across your documentation.
+</ResponseField>
+
+<ResponseField name="provider" type="string" required>
+  The AI advertising provider to use. Currently supports "ai-ads".
+</ResponseField>
+
+<ResponseField name="contextual" type="boolean" default="true">
+  Enable contextual ad targeting based on page content.
+</ResponseField>
+
+<ResponseField name="behavioral" type="boolean" default="true">
+  Enable behavioral targeting based on user interactions.
+</ResponseField>
+
+<ResponseField name="placement" type="string" default="auto">
+  Ad placement strategy. Options: "auto", "manual", "sidebar", "inline".
+</ResponseField>
+
+## Ad Placement
+
+### Automatic Placement
+
+When using automatic placement, AI Ads will intelligently determine the optimal locations for advertisements based on:
+
+- Content length and structure
+- User scroll behavior
+- Page engagement metrics
+- Historical performance data
+
+### Manual Placement
+
+For more control, you can manually place ads using the `<AdUnit>` component:
+
+```mdx
+<AdUnit 
+  type="banner" 
+  size="medium" 
+  contextual={true}
+/>
+```
+
+### Sidebar Integration
+
+Enable sidebar ads to display relevant advertisements alongside your content:
+
+```json
+{
+  "ads": {
+    "sidebar": {
+      "enabled": true,
+      "position": "right",
+      "size": "large"
+    }
+  }
+}
+```
+
+## Analytics and Reporting
+
+AI Ads provides comprehensive analytics to help you understand ad performance:
+
+- **Click-through rates (CTR)**
+- **Impression metrics**
+- **Revenue tracking**
+- **User engagement analysis**
+- **A/B testing results**
+
+Access your analytics dashboard through the admin panel or via API endpoints.
+
+## Best Practices
+
+1. **Content Relevance**: Ensure ads complement your documentation content
+2. **User Experience**: Maintain a balance between monetization and usability
+3. **Performance Monitoring**: Regularly review analytics to optimize ad placement
+4. **Mobile Optimization**: Test ad display across different device sizes
+5. **Loading Speed**: Monitor page load times to ensure ads don't impact performance
+
+## Privacy and Compliance
+
+AI Ads is designed with privacy in mind and supports:
+
+- GDPR compliance
+- CCPA compliance
+- Cookie consent management
+- Data anonymization
+- User opt-out options
+
+## Support
+
+For technical support or questions about AI Ads integration, please contact our support team or refer to the API documentation.
