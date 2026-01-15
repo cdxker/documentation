@@ -23,6 +23,7 @@
             "pages": [
               "index",
               "quickstart",
+              "main/quickstart",
               "installation",
               "editor"
             ]
