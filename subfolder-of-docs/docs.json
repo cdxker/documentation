@@ -572,6 +572,18 @@
     {
       "source": "api-reference/chat/*",
       "destination": "api-reference/assistant/*"
+    },
+    {
+      "source": "/legacy/avx-overview",
+      "destination": "/archive/avx/overview"
+    },
+    {
+      "source": "/legacy/avx-install",
+      "destination": "/archive/avx/install"
+    },
+    {
+      "source": "/legacy/avx-licensing",
+      "destination": "/archive/avx/licensing"
     }
   ],
   "integrations": {
